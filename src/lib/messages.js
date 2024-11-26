@@ -22,7 +22,7 @@ export const introMessage = [
 	"",
 	"   Welcome to WebVM. To download the launcher, run:",
 	"",
-	"     ./install_launcher_deb
+	"     ./install_launcher_deb,
 	"   Both 'user' and 'root' has the password 'password'.
 	""
 ];
