@@ -15,10 +15,6 @@ WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
 ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
-RUN cat << HEREDOC > /home/user/install_launcher.sh
-mkdir -p /home/user/launcher/ && cd /home/user/launcher
-wget https://launcher.mojang.com/download/Minecraft.tar.gz
-tar -xzf Minecraft.tar.gz
-HEREDOC
+RUN cat "mkdir -p /home/user/launcher/ && cd /home/user/launcher\nwget https://launcher.mojang.com/download/Minecraft.tar.gz\ntar -xzf Minecraft.tar.gz" > /home/user/install_launcher.sh
 RUN chmod +x /home/user/install_launcher.sh
 CMD [ "/bin/bash" ]
