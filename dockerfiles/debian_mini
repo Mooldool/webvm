@@ -7,7 +7,7 @@ RUN apt-get -y install apt-utils gcc \
 	patch wamerican ucf manpages \
 	file make dialog curl \
 	less netcat-openbsd gzip wget \
-        xinit dwm 9wm
+        xinit 9wm
 RUN useradd -m user && echo "user:password" | chpasswd
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
 WORKDIR /home/user/
