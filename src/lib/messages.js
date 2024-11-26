@@ -20,13 +20,10 @@ export const introMessage = [
 	"|                                                                             |",
 	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
 	"",
-	"   Welcome to WebVM. If unsure, try these examples:",
+	"   Welcome to WebVM. To download the launcher, run:",
 	"",
-	"     python3 examples/python3/fibonacci.py ",
-	"     gcc -o helloworld examples/c/helloworld.c && ./helloworld",
-	"     objdump -d ./helloworld | less -M",
-	"     vim examples/c/helloworld.c",
-	"     curl --max-time 15 parrot.live  # requires networking",
+	"     ./install_launcher_deb
+	"   Both 'user' and 'root' has the password 'password'.
 	""
 ];
 export const errorMessage = [
