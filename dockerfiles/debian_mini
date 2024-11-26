@@ -16,5 +16,6 @@ RUN echo 'root:password' | chpasswd
 RUN mkdir -p /home/user/launcher
 RUN echo "cd /home/user/launcher; wget https://launcher.mojang.com/download/Minecraft.tar.gz; tar -xzf Minecraft.tar.gz" >> /home/user/install_launcher_source.sh
 RUN echo "cd /home/user/launcher; wget https://launcher.mojang.com/download/Minecraft.deb; apt-get -y install ./Minecraft.deb" >> /home/user/install_launcher_deb.sh
-RUN chmod +x /home/user/install_launcher.sh
+RUN chmod +x /home/user/install_launcher_source.sh
+RUN chmod +x /home/user/install_launcher_deb.sh
 CMD [ "/bin/bash" ]
