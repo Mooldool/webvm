@@ -14,6 +14,7 @@ WORKDIR /home/user/
 ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
 RUN mkdir -p /home/user/launcher
-RUN echo "cd /home/user/launcher; wget https://launcher.mojang.com/download/Minecraft.tar.gz; tar -xzf Minecraft.tar.gz" >> /home/user/install_launcher.sh
+RUN echo "cd /home/user/launcher; wget https://launcher.mojang.com/download/Minecraft.tar.gz; tar -xzf Minecraft.tar.gz" >> /home/user/install_launcher_source.sh
+RUN echo "cd /home/user/launcher; wget https://launcher.mojang.com/download/Minecraft.deb; apt-get -y install ./Minecraft.deb" >> /home/user/install_launcher_deb.sh
 RUN chmod +x /home/user/install_launcher.sh
 CMD [ "/bin/bash" ]
