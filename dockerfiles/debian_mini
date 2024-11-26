@@ -2,12 +2,13 @@ FROM --platform=i386 i386/debian:buster
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt-get -y install apt-utils gcc \
-	python3 vim-nox unzip nodejs \
-	fakeroot dbus base whiptail hexedit \
+	python3 vim-nox unzip \
+	fakeroot dbus base whiptail \
 	patch wamerican ucf manpages \
-	file make lua50 dialog curl \
-	less netcat-openbsd gzip wget dwm
-RUN useradd -m user -G sudo && echo "user:password" | chpasswd
+	file make dialog curl \
+	less netcat-openbsd gzip wget \
+        xinit dwm 9wm
+RUN useradd -m user && echo "user:password" | chpasswd
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
 WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
