@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /home/user/launcher
+wget https://launcher.mojang.com/download/Minecraft.deb
+apt-get -y install ./Minecraft.deb
