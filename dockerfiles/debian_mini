@@ -7,7 +7,7 @@ RUN apt-get -y install apt-utils gcc \
 	patch wamerican ucf manpages \
 	file make dialog curl \
 	less netcat-openbsd gzip wget \
-        xinit 9wm
+        xinit 9wm xterm
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user --chmod=755 ./launcher /home/user/launcher
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
@@ -15,4 +15,5 @@ WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
 ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
-CMD [ "/bin/bash" ]
+RUN echo 'exec 9wm' >> .xinitrc
+CMD [ "/bin/bash -c 'startx'" ]
