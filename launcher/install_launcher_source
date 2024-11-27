@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /home/user/launcher
+wget https://launcher.mojang.com/download/Minecraft.tar.gz
+tar -xzf Minecraft.tar.gz
