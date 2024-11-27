@@ -18,4 +18,4 @@ RUN echo 'root:password' | chpasswd
 RUN echo 'sleep 5; startx || bash' >> /startup
 RUN chmod +x /startup
 RUN echo 'exec 9wm' >> .xinitrc
-CMD [ "/usr/sbin/init" ]
+CMD [ "/bin/bash" ]
