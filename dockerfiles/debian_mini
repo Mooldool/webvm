@@ -14,6 +14,7 @@ WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
 ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
-RUN git clone --depth=0 https://github.com/udevbe/greenfield.git greenfield/; cd greenfield; make; make install
+RUN git clone --depth=0 https://github.com/udevbe/greenfield.git greenfield/; cd greenfield; yarn install
+RUN yarn workspaces foreach --all --parallel --topological-dev --exclude @gfld/compositor-proxy --exclude @gfld/compositor-proxy-cli --exclude @gfld/compositor-shell run build
 EXPOSE 8000
 CMD [ "/bin/bash" ]
